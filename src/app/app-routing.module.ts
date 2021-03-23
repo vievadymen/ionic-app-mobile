@@ -11,6 +11,42 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./pages/admin/admin.module').then( m => m.AdminPageModule)
+  },
+  {
+    path: 'depot',
+    loadChildren: () => import('./pages/depot/depot.module').then( m => m.DepotPageModule)
+  },
+  {
+    path: 'retrait',
+    loadChildren: () => import('./pages/retrait/retrait.module').then( m => m.RetraitPageModule)
+  },
+  {
+    path: 'transactions-admin',
+    loadChildren: () => import('./transactions-admin/transactions-admin.module').then( m => m.TransactionsAdminPageModule)
+  },
+  {
+    path: 'transactions-user',
+    loadChildren: () => import('./transactions-user/transactions-user.module').then( m => m.TransactionsUserPageModule)
+  },
+  {
+    path: 'commissions',
+    loadChildren: () => import('./commissions/commissions.module').then( m => m.CommissionsPageModule)
+  },
+  {
+    path: 'calculateur-frais',
+    loadChildren: () => import('./calculateur-frais/calculateur-frais.module').then( m => m.CalculateurFraisPageModule)
+  },
+  {
+    path: 'user',
+    loadChildren: () => import('./user/user.module').then( m => m.UserPageModule)
+  },
 ];
 
 @NgModule({

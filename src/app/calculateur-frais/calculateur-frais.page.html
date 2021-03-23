@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+    <ion-img src="../assets/logomoneysa.jpeg" class="logo"></ion-img>
+    </ion-buttons>
+    <ion-title size="small"><ion-icon name="calculator"></ion-icon> Calculateur de frais </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #form="ngForm">
+    <ion-item>
+      <ion-input  placeholder="Type de transaction" name="type" [(ngModel)]="data.type"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Montant" name="montant" [(ngModel)]="data.montant"></ion-input>
+    </ion-item>
+    <ion-button color="danger" size="small" id="calculer" (click)="showFrais()">Calculer</ion-button>
+
+  </form>
+  
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+
+      <ion-button  slot="start" fill="clear" routerLink="/admin" routerDirection="root">
+        <ion-icon name="home" color="danger"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" >
+        <ion-icon name="refresh" color="medium" slot="icon-only"></ion-icon>
+      </ion-button>
+        <ion-button fill="clear">
+          <ion-icon name="barcode" color="medium" ></ion-icon>
+        </ion-button>
+      <ion-button  fill="clear" slot="end">
+        <ion-icon name="calculator" color="medium"></ion-icon>
+      </ion-button>
+  </ion-toolbar>
+</ion-footer>

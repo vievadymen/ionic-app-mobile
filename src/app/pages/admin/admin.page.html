@@ -1,0 +1,83 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"> </ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="">
+      <ion-img src="../assets/logomoneysa.jpeg"></ion-img>
+    </ion-buttons>
+    <ion-buttons  slot="end">
+      <ion-avatar>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+    </ion-buttons>
+   
+  </ion-toolbar>
+ 
+  <ion-card class="solde">
+    <ion-card-content>
+     Mon solde disponible
+     <ion-label >
+      <h1>150 000 F CFA</h1>
+     </ion-label> 
+     <ion-icon name="eye-off" slot="end"></ion-icon>
+     Mise à jour le 22/02/2021 à 13:15
+    </ion-card-content>
+  </ion-card>
+</ion-header>
+
+
+<ion-content>
+
+  <div id="items">
+    <ion-item button  routerLink="/depot" routerDirection="root" detail>
+      <ion-label>
+        <ion-icon name="return-up-forward-outline"></ion-icon>
+        Dépot
+      </ion-label>
+    </ion-item>
+    
+    <ion-item button  routerLink="/depot" routerDirection="root" detail>
+      <ion-label>
+        <ion-icon name="return-up-back-outline"></ion-icon>
+        Retrait
+      </ion-label>
+    </ion-item>
+    
+    <ion-item button routerLink="/transactions-admin" routerDirection="root" detail>
+      <ion-label>
+        <ion-icon name="sync-outline"></ion-icon>
+         Mes transactions
+      </ion-label>
+    </ion-item>
+
+    <ion-item button detail>
+      <ion-label>
+        <ion-icon name="sync-circle"></ion-icon>
+        Toutes les transactions
+      </ion-label>
+    </ion-item>
+
+    <ion-item button routerLink="/commissions" routerDirection="root" detail>
+      <ion-label>
+        <ion-icon name="barcode"></ion-icon>
+        Mes commissions
+      </ion-label>
+    </ion-item>
+
+    <ion-item button routerLink="/calculateur-frais" routerDirection="root" detail>
+      <ion-label>
+        <ion-icon name="calculator"></ion-icon>
+        Calculateur de frais
+      </ion-label>
+    </ion-item>
+
+    <ion-item button detail>
+      <ion-label>
+        <ion-icon name="log-out"></ion-icon>
+        Déconnexion
+      </ion-label>
+    </ion-item>
+  </div>
+
+</ion-content>

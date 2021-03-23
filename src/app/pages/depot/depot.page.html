@@ -1,0 +1,98 @@
+<ion-header>
+  
+  <ion-toolbar>
+    <ion-buttons>
+    <ion-button fill="clear" slot="start" routerLink="/admin" routerDirection="root">
+    <ion-icon slot="icon-only" name="home"></ion-icon>
+    </ion-button>
+    <ion-img src="../assets/logomoneysa.jpeg" class="logo"></ion-img>
+    </ion-buttons>
+    <ion-title size="small"><ion-icon name="return-up-forward-outline"></ion-icon> Dépot </ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+<!-- Segment with anchors -->
+<ion-segment (ionChange)="segmentChanged($event)">
+  <ion-segment-button value="emetteur">
+    <ion-label>Emetteur</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="beneficiaire">
+    <ion-label>Bénéficiaire</ion-label>
+  </ion-segment-button>
+</ion-segment>
+
+<div *ngIf="selectedSegment == 'emetteur'">
+  <form #form="ngForm">
+<ion-item>
+  <ion-label>N° CNI</ion-label>
+  <ion-input  [(ngModel)]="data.cni" name="cni" required></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Nom</ion-label>
+  <ion-input type="text"  [(ngModel)]="data.nom" name="nom" required></ion-input> 
+</ion-item>
+<ion-item>
+  <ion-label>Prenom</ion-label>
+  <ion-input type="text"  [(ngModel)]="data.prenom" name="nom" required></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Téléphone</ion-label>
+  <ion-input type="text"   [(ngModel)]="data.tel" name="tel" required></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Montant</ion-label>
+  <ion-input type="number" placeholder="Montant" [(ngModel)]="data.montant" name="montant" #box (keyup)="onEnter($event)" required></ion-input>
+</ion-item>
+<ion-item class="frais">
+  <ion-label>frais</ion-label>
+  <ion-input type="text" [(ngModel)]="data.frais" name="frais"></ion-input>
+</ion-item>
+<ion-item class="total">
+  <ion-label>Total</ion-label>
+  <ion-input type="number" [(ngModel)]="data.total" name="total"></ion-input>
+</ion-item>
+
+  <ion-button expand="block" color="danger" (click)="genererCode()" >Suivant</ion-button>
+</form>
+</div>
+
+<div *ngIf="selectedSegment == 'beneficiaire'"> 
+
+  <form #form="ngForm">
+  <ion-item>
+    <ion-input type="text" placeholder="Nom" [(ngModel)]="data.nomRecep" name="nomRecep"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" placeholder="Prénom"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" placeholder="Téléphone" [(ngModel)]="data.numRecep" name="numRecep"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="depotModal()">Suivant</ion-button>
+
+  </form>
+</div>
+
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+
+      <ion-button  slot="start" fill="clear">
+        <ion-icon name="home" color="danger"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" >
+        <ion-icon name="refresh" color="medium" slot="icon-only"></ion-icon>
+      </ion-button>
+        <ion-button fill="clear">
+          <ion-icon name="barcode" color="medium" ></ion-icon>
+        </ion-button>
+      <ion-button  fill="clear" slot="end">
+        <ion-icon name="calculator" color="medium"></ion-icon>
+      </ion-button>
+  </ion-toolbar>
+</ion-footer>
+

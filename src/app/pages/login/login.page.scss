@@ -1,0 +1,36 @@
+ion-button{
+    background: #51BFD0;
+    color: white;
+    border-radius: 10px;
+}
+#logocontainer{
+    text-align: center;
+    border-radius: 5px;
+}
+#logocontainer img{
+    width: 100px;
+    height: auto;
+    margin-top: 10%;
+}
+ion-title{
+    text-align: center
+}
+ion-toolbar{
+    height: 200px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #fcf6f6;
+}
+ion-content{
+    background-color: #E5E5E5;
+}
+
+ion-col{
+    margin-top: 40px;
+}
+ion-item{
+    padding: 15px;
+}
+form{
+    padding-top: 10px;
+}
